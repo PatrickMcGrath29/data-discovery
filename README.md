@@ -6,8 +6,13 @@ This is a fork of [LibreChat](https://github.com/danny-avila/LibreChat), integra
 
 1. Clone the repository
 1. `cp docker-compose.override.yml.example docker-compose.override.yml`
-1. Create the `.env` file, `cp .env.sample .env`
-1. Fill in the environment variables in the `.env` file. You'll need an API key for an LLM provider (OpenAI, Anthropic, etc), along with credentials for a ClickHouse instance. ClickHouse Cloud has a free tier when you can quickly get access to a test instance.
+1. Create the `.env` file, `cp .env.example .env`
+1. Fill in the environment variables in the `.env` file. You'll need an API key for an LLM provider (OpenAI, Anthropic, etc), along with credentials for a ClickHouse instance. ClickHouse Cloud has a free tier when you can quickly get access to a test instance. At a minimum, you'll want to fill in:
+    1. `CLICKHOUSE_HOST`
+    1. `CLICKHOUSE_PORT`
+    1. `CLICKHOUSE_USER`
+    1. `CLICKHOUSE_PASSWORD`
+    1. One of the LLM provider API keys (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, etc).
 1. `make up`
 
 ## Agent Configuration
