@@ -1,6 +1,6 @@
 # Data Discovery Tool
 
-This is a fork of LibreChat, integrated with the ClickHouse MCP.
+This is a fork of [LibreChat](https://github.com/danny-avila/LibreChat), integrated with the [ClickHouse MCP](https://github.com/ClickHouse/mcp-clickhouse).
 
 ## Setup Instructions
 
