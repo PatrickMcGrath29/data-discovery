@@ -31,13 +31,8 @@ actions:
 
 mcpServers:
   mcp-clickhouse:
-    command: uvx
-    args:
-      - --with
-      - mcp-clickhouse
-      - --python
-      - "3.13"
-      - mcp-clickhouse
+    command: mcp-clickhouse
+    args: []
     env:
       CLICKHOUSE_HOST: "${CLICKHOUSE_HOST}"
       CLICKHOUSE_PORT: "${CLICKHOUSE_PORT}"

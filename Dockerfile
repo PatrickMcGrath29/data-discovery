@@ -12,8 +12,16 @@ RUN pip install uv
 # Create node user and group
 RUN addgroup -g 1000 node && adduser -u 1000 -G node -s /bin/sh -D node
 
+# Install mcp-clickhouse as the node user
+USER node
+RUN uv tool install mcp-clickhouse
+USER root
+
 # Set environment variable to use jemalloc
 ENV LD_PRELOAD=/usr/lib/libjemalloc.so.2
+
+# Add uv tool bin directory to PATH for node user
+ENV PATH="/home/node/.local/bin:$PATH"
 
 # Verify uv installation
 RUN uv --version
