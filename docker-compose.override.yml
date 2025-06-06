@@ -1,0 +1,13 @@
+# docker-compose.override.yml
+version: '3.4'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: librechat-custom:latest
+    volumes:
+      - type: bind
+        source: ./librechat.yaml
+        target: /app/librechat.yaml
